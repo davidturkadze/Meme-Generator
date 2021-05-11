@@ -13,41 +13,87 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Vanilla JS Meme Generator</title>
+    <title>jQuery Bootstrap Meme Generator</title>
   </head>
   <body>
     <div class="container">
-      <div class="page-header">
-        <h1><i class="fa fa-2x fas fa-magic" aria-hidden="true"></i> Meme Generator</h1>
+      <div class="page-header text-center">
+        <h1 class="mt-4 mb-4"></i> Meme Generator</h1>
       </div>
 
       <div class="row">
-        <div class="col-md-4">
-          <!-- BEGIN: Canvas rendering of generated Meme -->
-          <canvas id="meme" class="img-thumbnail"> Unfortunately your browser does not support canvas. </canvas>
-          <!-- END: Canvas rendering of generated Meme -->
-
-          <a class="btn btn-primary btn-block" id="download_meme"> <i class="fa fa-download" aria-hidden="true"></i> Download </a>
-        </div>
-        <div class="col-md-8">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="input-group">
-                <input type="file" class="form-control" id="imgInp" />
-              </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div  id="meme" class="img-thumbnail meme-container">
+             <div class="top_text_container"><p id="top_text_content"></p></div>
+             <div class="bottom_text_container"><p id="bottom_text_content"></p></div>
             </div>
           </div>
-
-          <hr />
-
-          <h3>Upper Text:</h3>
-          <div class="form-group mt-4 mb-4">
-            <input type="text" class="form-control form-control-lg" value="Test" id="top_text" />
+          <div class="col-md-12">
+            <a class="btn btn-primary btn-block" id="download_meme"> <i class="fa fa-download" aria-hidden="true"></i> Download </a>
+            
           </div>
+        </div>
 
-          <h3>Lower Text:</h3>
-          <div class="form-group mt-4 mb-4">
-            <input type="text" class="form-control form-control-lg" value="Test" id="bottom_text" />
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="input-group">
+                    <input type="file" class="form-control" id="imgInput" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <hr />
+
+              <h3><i class="far fa-comment-dots"></i> Upper Text:</h3>
+              <div class="form-group mt-4 mb-4">
+                <input type="text" class="form-control form-control-lg" value="Test" id="top_text" />
+              </div>
+
+              <h3><i class="far fa-comment-dots"></i> Lower Text:</h3>
+              <div class="form-group mt-4 mb-4">
+                <input type="text" class="form-control form-control-lg" value="Test" id="bottom_text" />
+              </div>
+
+              <hr />
+
+              <div class="card">
+                <div class="card-header"><i class="fas fa-cog"></i> Options</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12">         
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label class="control-label" for="text_size">Font size:</label>
+                          </div>
+                          <div class="col-md-7">
+                            <input style="width: 100%" name="text_size" id="text_size" type="range" min="30" max="60" value="45" />
+                          </div>
+                          <div class="col-md-2 setting-value"><span id="text_size_value">45</span>px</div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label class="control-label" for="color">Font color:</label>
+                          </div>
+                          <div class="col-md-7">
+                            <input style="width: 100%" name="color" id="text_color" type="color" value="#ffffff"/>
+                          </div>
+                          <div class="col-md-2 setting-value"><span id="text_color_value">#ffffff</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
