@@ -82,7 +82,19 @@ $(document).ready(function () {
     drawMeme();
   });
 
-  $('#download_meme').click(function () {
-    //will be implemented later
+  $('#download_as_png').click(function () {
+    domtoimage.toBlob(document.getElementById('meme')).then(function (blob) {
+      window.saveAs(blob, 'output.png');
+    });
+  });
+  $('#download_as_jpeg').click(function () {
+    domtoimage.toBlob(document.getElementById('meme')).then(function (blob) {
+      window.saveAs(blob, 'output.jpeg');
+    });
+  });
+  $('#download_as_gif').click(function () {
+    domtoimage.toBlob(document.getElementById('meme')).then(function (blob) {
+      window.saveAs(blob, 'output.gif');
+    });
   });
 });
