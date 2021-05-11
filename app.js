@@ -1,8 +1,22 @@
 $(document).ready(function () {
+  const fontFamilies = ['Arial', 'Comic Sans', 'Pacifico'];
+
+  let fontFamilySelect = $('#text_font_family');
+
+  //Populate Font Family Select options
+  let fontFamilyOptions = function (fontFamilyOptions) {
+    $.each(fontFamilyOptions, function (index, value) {
+      $('<option/>', {
+        value: value,
+        text: value,
+      }).appendTo(fontFamilySelect);
+    });
+  };
+
+  fontFamilyOptions(fontFamilies);
+
   // core drawing function
   let drawMeme = function () {
-    //let img = document.querySelector('#start-image');
-
     let meme = $('#meme');
 
     let fontSize = Number($('#text_size').val());
