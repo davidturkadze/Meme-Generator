@@ -3,6 +3,8 @@ $(document).ready(function () {
 
   let fontFamilySelect = $('#text_font_family');
 
+  let meme = $('#meme');
+
   //Populate Font Family Select options
   let fontFamilyOptions = function (fontFamilyOptions) {
     $.each(fontFamilyOptions, function (index, value) {
@@ -17,14 +19,15 @@ $(document).ready(function () {
 
   // core drawing function
   let drawMeme = function () {
-    let meme = $('#meme');
-
     let fontSize = Number($('#text_size').val());
 
     let textColor = $('#text_color').val();
 
+    let fontFamily = fontFamilySelect.val();
+
     meme.css('font-size', fontSize);
     meme.css('color', textColor);
+    meme.css('font-family', fontFamily);
 
     let text1 = $('#top_text').val();
     $('#top_text_content').text(text1);
@@ -72,5 +75,14 @@ $(document).ready(function () {
   $('#text_color').change(function () {
     $('#text_color_value').text($(this).val());
     drawMeme();
+  });
+
+  $('#text_font_family').change(function () {
+    $('#text_font_family_value').text($(this).val());
+    drawMeme();
+  });
+
+  $('#download_meme').click(function () {
+    //will be implemented later
   });
 });

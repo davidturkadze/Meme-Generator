@@ -4,11 +4,14 @@
 html {
   height: 100%;
 }
-/* img#start-image {
-  position: absolute;
-  left: -10000px;
-  top: -10000px;
-} */
+
+body {
+  background: #669900;
+}
+
+h1 {
+  color: #fff;
+}
 
 .meme-container {
   position: relative;
@@ -25,41 +28,24 @@ html {
   line-height: 1.2;
 }
 
-.top_text_container {
-  text-align: center;
-  display: inline-block;
-  margin: 0 auto;
-  max-width: 250px;
-  position: absolute;
-  top: 7%;
-  left: 0;
-  right: 0px;
-  z-index: 1000;
-  width: 100%;
-}
-
+.top_text_container,
 .bottom_text_container {
   text-align: center;
   display: inline-block;
   margin: 0 auto;
-  max-width: 250px;
+  max-width: 500px;
   position: absolute;
-  bottom: 7%;
-  left: 0;
-  right: 0px;
   z-index: 1000;
   width: 100%;
+  left: 0;
+  right: 0px;
+  word-break: break-all;
 }
 
-.top_text_container p {
-  width: 100%;
+.top_text_container {
+  top: 7%;
 }
 
-img#start-image {
-  display: block;
-  position: relative;
-  max-width: 700px;
-  max-height: 700px;
-  width: 100%;
-  height: 100%;
+.bottom_text_container {
+  bottom: 7%;
 }
